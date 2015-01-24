@@ -3,3 +3,4 @@
 erl_crash.dump
 *.ez
 /web/models/repo.ex
+/config/config.exs
