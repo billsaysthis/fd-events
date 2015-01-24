@@ -2,13 +2,15 @@ defmodule FdEvents.Repo.Migrations.InitialEventsRoomsCreate do
   use Ecto.Migration
 
   def up do
-    "CREATE TABLE events_rooms( \
-      id serial primary key, \
-      event_id integer, \
-      room_id integer)"
+    create table(:events_rooms) do
+      add :event_id, :integer
+      add :room_id, :integer
+
+      timestamps
+    end
   end
 
   def down do
-    "DROP TABLE events_rooms"
+    drop table(:events_rooms)
   end
 end
