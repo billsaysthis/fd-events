@@ -2,18 +2,18 @@ defmodule FdEvents.Repo.Migrations.InitialUsersCreate do
   use Ecto.Migration
 
   def up do
-    "CREATE TABLE users( \
-      id serial primary key, \
-      first_name varchar(255), \
-      last_name varchar(255), \
-      email varchar(255), \
-      joined_at timestamp, \
-      active boolean, \
-      created_at timestamp, \
-      updated_at timestamp)"
+    create table(:users) do
+      add :first_name, :string, size: 255
+      add :last_name, :string, size: 255
+      add :email, :string, size: 255
+      add :joined_at, :timestamp
+      add :active, :boolean
+      
+      timestamps
+    end
   end
 
   def down do
-    "DROP TABLE users"
+    drop table(:users)
   end
 end
