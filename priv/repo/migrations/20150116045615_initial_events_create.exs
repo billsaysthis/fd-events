@@ -2,28 +2,28 @@ defmodule FdEvents.Repo.Migrations.InitialEventsCreate do
   use Ecto.Migration
 
   def up do
-    "CREATE TABLE events( \
-      id serial primary key, \
-      name varchar(255), \
-      user_id integer, \
-      second_user_id integer, \
-      third_user_id integer, \
-      event_type varchar(20), \
-      attendance integer, \
-      public_url varchar(255), \
-      fee varchar(10), \
-      description text, \
-      notes varchar(1000), \
-      status varchar(20), \
-      start_at timestamp, \
-      finish_at timestamp, \
-      setup_time integer, \
-      teardown_time integer, \
-      created_at timestamp, \
-      updated_at timestamp)"
+    create table(:events) do
+      add :name, :string, size: 255
+      add :user_id, :integer
+      add :second_user_id, :integer
+      add :third_user_id, :integer
+      add :event_type, :string, size: 20
+      add :attendance, :integer
+      add :public_url, :string, size: 255
+      add :fee, :string, size: 10
+      add :description, :text
+      add :notes, :string, size: 1000
+      add :status, :string, size: 20
+      add :start_at, :datetime
+      add :finish_at, :datetime
+      add :setup_time, :integer
+      add :teardown_time, :integer
+      
+      timestamps
+    end
   end
 
   def down do
-    "DROP TABLE events"
+    drop table(:events)
   end
 end
