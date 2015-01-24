@@ -6,7 +6,8 @@ defmodule FdEvents.Repo.Migrations.InitialEventsCreate do
       id serial primary key, \
       name varchar(255), \
       user_id integer, \
-      rooms varchar(255), \
+      second_user_id integer, \
+      third_user_id integer, \
       event_type varchar(20), \
       attendance integer, \
       public_url varchar(255), \
