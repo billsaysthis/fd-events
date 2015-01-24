@@ -1,0 +1,11 @@
+defmodule FdEvents.Repo do
+  use Ecto.Repo, adapter: Ecto.Adapters.Postgres
+
+  def conf do
+    parse_url "ecto://<your postgres name>@<your postgres server>/hdEvents"
+  end
+
+  def priv do
+    app_dir(:fd_events, "priv/repo")
+  end
+end
