@@ -20,3 +20,10 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+# In your config/config.exs file
+config :fd_events, FdEvents.Repo,
+  database: "hdEvents",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"

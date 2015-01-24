@@ -2,15 +2,17 @@ defmodule FdEvents.Repo.Migrations.InitialSettingsCreate do
   use Ecto.Migration
 
   def up do
-    "CREATE TABLE settings(
-      id  primary key, \
-      group varchar(255), \
-      name varchar(255), \
-      val varchar(255)
-    )"
+    create table(:settings) do
+      add :type,  :string, size: 40
+      add :name,  :string, size: 255
+      add :val,   :string, size: 255
+
+      timestamps
+    end
   end
 
+
   def down do
-    "DROP TABLE settings"
+    drop table(:settings)
   end
 end
