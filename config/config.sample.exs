@@ -24,6 +24,6 @@ import_config "#{Mix.env}.exs"
 # In your config/config.exs file
 config :fd_events, FdEvents.Repo,
   database: "hdEvents",
-  username: "bill",
-  password: "",
-  hostname: "localhost"
+  username: "<your postgres user>",
+  password: "<your postgres password",
+  hostname: "<your postgres host>"
