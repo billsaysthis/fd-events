@@ -15,6 +15,12 @@ defmodule FdEvents.Router do
 
     get "/", PageController, :index
   end
+  
+  scope "/events" do
+    pipe_through :browser
+    
+    get "/all", FdEvents.EventController, :all
+  end
 
   # Other scopes may use custom stacks.
   # scope "/api", FdEvents do
